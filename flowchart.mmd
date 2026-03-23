@@ -1,0 +1,49 @@
+graph TD
+    A["App Component<br/>RouterProvider"] --> B{"Router"}
+    
+    B -->|path: /| C["Home Page<br/>home/"]
+    B -->|path: /about| D["About Page<br/>about/"]
+    B -->|path: /service| E["Service Page<br/>service/"]
+    B -->|path: /product| F["Product Page<br/>product/"]
+    
+    NAV["Navbar"] -.-> C
+    NAV -.-> D
+    NAV -.-> E
+    NAV -.-> F
+    
+    F -->|path: convenience| G["Convenience<br/>Component"]
+    F -->|path: shopping/:id| H["Shopping<br/>Component"]
+    F -->|path: specialty| I["Specialty<br/>Component"]
+    
+    G --> J["Universal Desc<br/>Component<br/>:id"]
+    H --> J
+    I --> J
+    
+    G -->|Data Import| K["(src/Utility/)<br/>Data Sources"]
+    H -->|Data Import| K
+    I -->|Data Import| K
+    J -->|Data Import| K
+    
+    K --> K1["ConvenienceProducts.js<br/>DataConv"]
+    K --> K2["ShoppingProducts.js<br/>DataShop"]
+    K --> K3["SpecialtyProducts.js<br/>DataSpec"]
+    K --> K4["UnsoughtProducts.js<br/>DataUns"]
+    K --> K5["All.js<br/>DataAll"]
+    
+    style A fill:#e1f5ff,color:#000,stroke:#333,stroke-width:2px
+    style B fill:#fff3e0,color:#000,stroke:#333,stroke-width:2px
+    style C fill:#b3e5fc,color:#000,stroke:#333,stroke-width:2px
+    style D fill:#b3e5fc,color:#000,stroke:#333,stroke-width:2px
+    style E fill:#b3e5fc,color:#000,stroke:#333,stroke-width:2px
+    style F fill:#b3e5fc,color:#000,stroke:#333,stroke-width:2px
+    style G fill:#c8e6c9,color:#000,stroke:#333,stroke-width:2px
+    style H fill:#c8e6c9,color:#000,stroke:#333,stroke-width:2px
+    style I fill:#c8e6c9,color:#000,stroke:#333,stroke-width:2px
+    style J fill:#ffe0b2,color:#000,stroke:#333,stroke-width:2px
+    style K fill:#f3e5f5,color:#000,stroke:#333,stroke-width:2px
+    style NAV fill:#ffccbc,color:#000,stroke:#333,stroke-width:2px
+    style K1 fill:#f3e5f5,color:#000,stroke:#333,stroke-width:1px
+    style K2 fill:#f3e5f5,color:#000,stroke:#333,stroke-width:1px
+    style K3 fill:#f3e5f5,color:#000,stroke:#333,stroke-width:1px
+    style K4 fill:#f3e5f5,color:#000,stroke:#333,stroke-width:1px
+    style K5 fill:#f3e5f5,color:#000,stroke:#333,stroke-width:1px
